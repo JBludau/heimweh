@@ -1,6 +1,8 @@
 " Vimrc file synthesized by Jakob Bludau
 
 """"""""""""""""""""""""""""""""""""""""VIM SETTINGS"""""""""""""""""""""""""""""""""""""""""
+set encoding=utf-8
+
 " enable syntax highlighting
 :syntax on
 set background=dark
