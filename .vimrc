@@ -31,11 +31,11 @@ let mapleader=","
 " automatically change current dir to file dir
 " set autochdir 
    if has('python')
-     map <C-I> :pyf /Users/7g0/llvm-project/clang/tools/clang-format/clang-format.py<cr>
-     imap <C-I> <c-o>:pyf /Users/7g0/llvm-project/clang/tools/clang-format/clang-format.py<cr>
+     map <C-I> :pyf ~/.vim/clang-format.py<cr>
+     imap <C-I> <c-o>:pyf ~/.vim/clang-format.py<cr>
    elseif has('python3')
-     map <C-I> :py3f /Users/7g0/llvm-project/clang/tools/clang-format/clang-format.py<cr>
-     imap <C-I> <c-o>:py3f /Users/7g0/llvm-project/clang/tools/clang-format/clang-format.py<cr>
+     map <C-I> :py3f ~/.vim/clang-format.py<cr>
+     imap <C-I> <c-o>:py3f ~/.vim/clang-format.py<cr>
    endif
 
 " switch between buffers without saving
