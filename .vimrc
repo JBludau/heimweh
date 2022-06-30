@@ -391,6 +391,10 @@ call vundle#end()
 filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""PLUGIN SETUP"""""""""""""""""""""""""""""""""""""""
+"YouCompleteMe setup
+"keep from adding includes
+let g:ycm_clangd_args=['--header-insertion=never']
+
 "NERD COMMENTER
 let NERDSpaceDelims=1
 
@@ -411,6 +415,20 @@ let g:over_enable_cmd_window = 1
 
 "STATUSLINE (airline)
 set laststatus=2
+
+" Use clang-format on save
+let g:clang_format_fallback_style='none'
+function! Formatonsave()
+  let l:lines="all"
+  py3f ~/.vim/clang-format.py
+endfunction
+autocmd BufWritePre *.h,*.hh,*.hpp,*.cc,*.cpp,*.cu,*.cuh call Formatonsave()
+
+" Use spell checker as soon as a tex file is open
+au BufNewFile,BufRead *.tex set spell
+
+" Recognize cuh as CUDA file
+au BufNewFile,BufRead *.cuh set filetype=cuda
 
 " Airline setup
 let g:airline_powerline_fonts = 1
