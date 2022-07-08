@@ -40,6 +40,11 @@ let mapleader=","
      imap <C-I> <c-o>:py3f ~/.vim/clang-format.py<cr>
    endif
 
+" opens search results in a window w/ links and highlight the matches
+command! -nargs=+ Grep execute 'silent grep! -I -r -n --exclude *.{json,pyc} . -e <args>' | copen | execute 'silent /<args>'
+" shift-control-* Greps for the word under the cursor
+:nmap <leader>g :Grep <c-r>=expand("<cword>")<cr><cr>
+
 " switch between buffers without saving
 set hidden
 
