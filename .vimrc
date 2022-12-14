@@ -57,6 +57,9 @@ set hidden
 " Enable enhanced command line completion.
 set wildmenu wildmode=list:full
 
+" Try to use system clipboard
+set clipboard=unnamed
+
 " set tabstop to be two spaces
 set tabstop=2 shiftwidth=2 expandtab
 
@@ -388,10 +391,10 @@ Plugin 'luochen1990/rainbow'
 Plugin 'vim-scripts/a.vim'
 
 " Plugin for automatic ctags generation
-Plugin 'xolox/vim-easytags'
+" Plugin 'xolox/vim-easytags'
 
 " Plugin necessary for easytags
-Plugin 'xolox/vim-misc'
+" Plugin 'xolox/vim-misc'
 
 call vundle#end()
 
