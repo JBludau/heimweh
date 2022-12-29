@@ -2,7 +2,7 @@
 export PATH=/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/Users/7g0/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -92,7 +92,6 @@ source $ZSH/oh-my-zsh.sh
 # [[ -e ~/.own ]] && emulate sh -c 'source ~/.own'
 
 
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 # __conda_setup="$('/media/me/83829c82-12b7-44ed-8458-39aeb6ae16ea/anaconda/3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -107,4 +106,14 @@ source $ZSH/oh-my-zsh.sh
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
+#
+# logt <cmd,args>
+function logt {
+    filename=$(echo $@ | sed 's/ //g')
+    filename_norm=$(echo $filename | sed 's/[\.\,\/]//g')
+    # echo $@
+    # echo $filename
+    # echo $filename_norm
+    eval "$@" &> "$filename_norm".log & ; tail -f "$filename_norm".log
+}
 
