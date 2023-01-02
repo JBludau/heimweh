@@ -116,4 +116,11 @@ function logt {
     # echo $filename_norm
     eval "$@" &> "$filename_norm".log & ; tail -f "$filename_norm".log
 }
-
+function mosh_proxy {
+    ssh_target=$1
+    server_ip=$(ssh -G $1 | awk '/^hostname / { print $2 }')
+    mosh_server_out=$(ssh $1 mosh-server)
+    mosh_key=$(cut -d' ' -f4 <<<$mosh_server_out)
+    mosh_port=$(cut -d ' ' -f3 <<<$mosh_server_out)
+    eval MOSH_KEY=$mosh_key mosh-client $server_ip $mosh_port
+}
