@@ -40,6 +40,10 @@ let mapleader=","
      imap <C-I> <c-o>:py3f ~/.vim/clang-format.py<cr>
    endif
 
+" highlight trailing whitespace
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
+
 " opens search results in a window w/ links and highlight the matches
 command! -nargs=+ Grep execute 'silent grep! -I -r -n --exclude *.{json,pyc} . -e <args>' | copen | execute 'silent /<args>'
 " shift-control-* Greps for the word under the cursor
