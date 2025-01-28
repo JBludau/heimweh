@@ -10,8 +10,14 @@ export PATH=/usr/local/bin:$PATH
 #ZSH_THEME="robbyrussell"
 # ZSH_THEME="maran" # simple and clean
 # ZSH_THEME="af-magic"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
 # ZSH_THEME="amuse"
+
+if [[ $(uname) == "Linux" ]]; then
+  ZSH_THEME="maran" # simple and clean
+else
+  ZSH_THEME="agnoster"
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
