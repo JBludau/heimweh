@@ -361,7 +361,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 
 " Provides Syntax checking 
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 
 " automatic closing of () and ''
 Plugin 'raimondi/delimitMate'
